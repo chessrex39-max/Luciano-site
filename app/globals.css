@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+
+  /* Base palette — "Autoridade Previdenciária": preto quente, granada e latão */
+  --color-ink: #0b0908;
+  --color-ink-deep: #050403;
+  --color-ink-soft: #171210;
+  --color-ivory: #f4ede3;
+  --color-ivory-warm: #e7dbc9;
+  --color-paper: #faf6ef;
+
+  --color-garnet: #7c1420;
+  --color-garnet-soft: #a02a34;
+  --color-garnet-deep: #4c0c14;
+  --color-brass: #c8a24c;
+  --color-brass-soft: #e1c684;
+
+  --breakpoint-xs: 22.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-body), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+.text-shell {
+  font-family: var(--font-display), serif;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.eyebrow {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.container-page {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .container-page {
+    padding-inline: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-page {
+    padding-inline: 4rem;
+  }
+}
+
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: var(--color-garnet);
+  color: var(--color-ivory);
+}
